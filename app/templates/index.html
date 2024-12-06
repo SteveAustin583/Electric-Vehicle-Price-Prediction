@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Price Prediction</title>
+</head>
+<body>
+    <h1>Electric Vehicle Price Prediction</h1>
+    
+    <form action="/predict" method="POST">
+        <label for="county">County:</label>
+        <input type="text" id="county" name="county"><br><br>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city"><br><br>
+
+        <label for="zip_code">ZIP Code:</label>
+        <input type="text" id="zip_code" name="zip_code"><br><br>
+
+        <label for="model_year">Model Year:</label>
+        <input type="text" id="model_year" name="model_year"><br><br>
+
+        <label for="make">Make:</label>
+        <input type="text" id="make" name="make"><br><br>
+
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model"><br><br>
+
+        <label for="ev_type">Electric Vehicle Type:</label>
+        <input type="text" id="ev_type" name="ev_type"><br><br>
+
+        <label for="cafv_eligibility">CAFV Eligibility:</label>
+        <input type="text" id="cafv_eligibility" name="cafv_eligibility"><br><br>
+
+        <label for="legislative_district">Legislative District:</label>
+        <input type="text" id="legislative_district" name="legislative_district"><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+    
+    <div id="result">
+        {% if predicted_price %}
+            <h2>Predicted Price: ${{ predicted_price }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
